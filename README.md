@@ -1,2 +1,1 @@
-# ReactsAdmin
-Created with CodeSandbox
+# ReactAdmin

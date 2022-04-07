@@ -7,7 +7,7 @@ export default function List() {
   return (
     <div className="list">
       <Sidebar />
-      <div className="listContaniner">
+      <div className="listContainer">
         <Navbar />
         <Datatable />
       </div>

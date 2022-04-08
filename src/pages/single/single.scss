@@ -1,9 +1,10 @@
 .single{
   // background-color: rebeccapurple;
   display: flex;
+  // padding-right: 10px;
   width: 100%;
   .singleContainer{
-    flex:6;
+     flex:6;
     .top{
       padding: 20px;
       display: flex;
@@ -11,18 +12,50 @@
       .left{
         flex:1;
         padding: 20px;
-        -webkit-box-shadow: 3px 4px 13px -1px #000000; 
-        box-shadow: 3px 4px 13px -1px #000000;
-
+        -webkit-box-shadow: 5px 8px 20px -3px rgba(0,0,0,0.59); 
+        box-shadow: 5px 8px 20px -3px rgba(0,0,0,0.59);
+        position: relative;
+        .editButton{
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 5px;
+          font-size: 12px;
+          color: #7451f8;
+          background-color: #dad5ec;
+          cursor: pointer;
+          border-radius: 0px 0px 0px 5px;
+        }
         .item{
           display: flex;
           gap:20px;
-
+          
           .itemImg{
             width: 100px;
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
+          }
+          .details{
+            .itemTitle{
+              margin-bottom: 10px;
+              color: #555;
+
+            }
+            .detailItem{
+              margin-bottom: 10px;
+              font-size: 14px;
+              .itemKey{
+                font-weight: bold;
+                color:grey;
+                margin-right: 5px;
+              }
+              .itemValue{
+                font-weight: 300;
+
+              }
+              
+            }
           }
         }
       }
@@ -30,5 +63,17 @@
         flex:2;
       }
     }
+  }
+  .singleBottom{
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
+        -webkit-box-shadow: 5px 8px 20px -3px rgba(0,0,0,0.59); 
+        box-shadow: 5px 8px 20px -3px rgba(0,0,0,0.59);
+  }
+  .title{
+    font-size: 16px;
+    color: lightgrey;
+    margin-bottom: 20px;
   }
 }

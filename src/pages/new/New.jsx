@@ -2,20 +2,27 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import NavBar from "../../components/navbar/Navbar";
 import "./new.scss";
 import { DriveFolderUploadOutlined } from "@mui/icons-material";
+import { useState } from "react";
 
-export default function New() {
+export default function New({ inputs, title }) {
+  const [file, setFile] = useState("");
+  // console.log(file);
   return (
     <div className="new">
       <Sidebar />
       <div className="newContainer">
         <NavBar />
         <div className="top">
-          <h1>Add New User</h1>
+          <h1>{title}</h1>
         </div>
         <div className="bottom">
           <div className="left">
             <img
-              src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+              src={
+                file
+                  ? URL.createObjectURL(file)
+                  : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+              }
               alt="profile"
             />
           </div>
@@ -25,13 +32,21 @@ export default function New() {
                 <label htmlFor="file">
                   Image: <DriveFolderUploadOutlined className="icon" />
                 </label>
-                <input type="file" id="file" style={{ display: "none" }} />
+                <input
+                  type="file"
+                  id="file"
+                  style={{ display: "none" }}
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
               </div>
-              <div className="formInput">
-                <label>Username</label>
-                <input type="text" placeholder="username" />
-              </div>
-              <div className="formInput">
+              {inputs.map((input) => (
+                <div className="formInput" key={input.id}>
+                  <label>{input.label}</label>
+                  <input type={input.type} placeholder={input.placeholder} />
+                </div>
+              ))}
+
+              {/* <div className="formInput">
                 <label>Name and Surname</label>
                 <input type="text" placeholder="Name and Surname" />
               </div>
@@ -54,7 +69,7 @@ export default function New() {
               <div className="formInput">
                 <label>Country</label>
                 <input type="text" placeholder="India" />
-              </div>
+              </div> */}
               <button>Send</button>
             </form>
           </div>

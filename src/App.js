@@ -9,7 +9,7 @@ import "./style/dark.scss";
 
 export default function App() {
   return (
-    <div className="app dark">
+    <div className="app">
       <BrowserRouter>
         <Routes>
           <Route path="/">

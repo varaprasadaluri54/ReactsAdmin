@@ -43,6 +43,18 @@
       }
     }
   }
+  .datatable{
+    .datagrid{
+      color: grey;
 
+      .viewButton,.deleteButton, .cellWithStatus{
+          color: grey;
+          border:none;
+      }
+    }
 
+  }
+ input {
+   background-color: transparent;
+ }
 }
